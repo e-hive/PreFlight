@@ -44,4 +44,4 @@ PreFlight helps with two common problems faced by development teams:
 
 - More tests = increased startup latency. Tests that rely on network access should be used sparingly and ensure a low time-out threshold.
 - You may find that some of your test dependencies aren't available when the PROFILE is loaded. You can defer test execution by overriding the default Prompt function and running tests from there  - assumes you don't already override it via OMP etc.
-- PreFlight is intended to be a simple framework. Included test are for referrence only. PreFlight isn't opinionated about the correct way to test your Environment or which tests should be important to your team.
+- PreFlight is intended to be a simple framework. Included tests are for reference only. PreFlight isn't opinionated about the correct way to test your Environment or which tests should be important to your team.
