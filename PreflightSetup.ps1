@@ -63,7 +63,6 @@ function Deploy-Module {
 function Update-Profile{
     try {
         $pwshProfilePath = 'PowerShell\Microsoft.PowerShell_profile.ps1'
-        $scriptPath = Join-Path $env:USERPROFILE ".preflight\PreFlight.ps1"
 
         Write-Host "PROFILE path: $PROFILE"
         if ($PROFILE -notlike "*$pwshProfilePath*") {
