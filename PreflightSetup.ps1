@@ -13,7 +13,7 @@ function Deploy-Module {
         [string]$ModuleName
     )
 
-    try{
+    try {
 
         # Locates the users modules directory
         $modulesFolder = Join-Path -Path ([Environment]::GetFolderPath("MyDocuments")) -ChildPath "PowerShell\Modules"
