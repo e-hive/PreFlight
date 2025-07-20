@@ -2,7 +2,7 @@
 
 PreFlight helps with two common problems faced by development teams:
 
-- **Inconsistent Tooling** – As Developers onboard to a new team, their tooling will often reflect the project state at that time. PreFlight helps teams to identify inconsitencies between developer environments, and “Works on my Machine” scenarios.
+- **Inconsistent Tooling** – As Developers onboard to a new team, their tooling will often reflect the project state at that time. PreFlight helps teams to identify inconsistencies between developer environments, and “Works on my Machine” scenarios.
 
 - **Change Detection** – In larger organisations, unannounced changes (group policy, networks/proxies, toxicity initiatives etc.) can silently break ops configurations. PreFlight can help to catch these breaking changes before they impact deliverables.
 
