@@ -85,7 +85,8 @@ function Update-Profile{
             New-Item -Path $absoluteProfilePath -ItemType File -Force | Out-Null
         }
 
-        if (-not (Get-Content -Path $absoluteProfilePath | Select-String -Pattern "PreFlight Integration")) {
+        $profileContent = Get-Content -Path $absoluteProfilePath
+        if (-not $profileContent -or -not ($profileContent | Select-String -Pattern "PreFlight Integration")) {
             # Challenges before modifying the profile
             $confirmation = Read-Host "PROFILE is not empty. Do you want to modify it? (yes/no)"
             if ($confirmation -ne "yes") {
