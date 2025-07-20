@@ -92,8 +92,6 @@ function Test-InstalledTools {
             Write-Host "[PreFlight] Error: Failed to retrieve version for $($tool.Name)" -ForegroundColor Red
         }
     }
-
-    return
 }
 
 #========================================
