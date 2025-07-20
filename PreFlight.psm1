@@ -54,7 +54,7 @@ function Test-InstalledModules {
 function Test-InstalledTools {
 
     $tools = @(
-        @{ Name = "git"; Command = "(git --version) -match '\d+\.\d+\.\d+' | Out-Null; `$matches[0]"; MinVersion = "2.0" },
+        @{ Name = "git"; Command = "[regex]::Match((git --version), '\d+\.\d+\.\d+').Value"; MinVersion = "2.0" },
         @{ Name = "dotnet"; Command = "dotnet --version"; MinVersion = "7.0" },
         @{ Name = "node"; Command = "node --version"; MinVersion = "16.0" },
         @{ Name = "az"; Command = "az version | ConvertFrom-Json | Select-Object -ExpandProperty azure-cli"; MinVersion = "2.0" },
