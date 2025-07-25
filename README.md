@@ -35,6 +35,8 @@ PreFlight helps with two common problems faced by development teams:
 - **Check Admin Mode** – Verifies if the session is elevated.
 - **Check PowerShell Version** – Confirms it meets the minimum version.
 - **Check Execution Policy** – Ensures policy is compatible.
+
+### Require Configuration
 - **Check Installed Modules** – Verifies required modules are present and up to date.
 - **Check Installed Tools** – Verifies required tools are present and up to date.
 - **Check Environment Variables** - Confirms the existence of required environment variables.
