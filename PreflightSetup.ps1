@@ -20,7 +20,7 @@ function Deploy-Module {
         # Optional Scope for module deployment, defaults to "CurrentUser", falls back to "AllUsers" if local modules path isn't registered
         [Parameter(Mandatory = $false)]
         [ValidateSet("CurrentUser", "AllUsers")]
-        [string]$Scope 
+        [string]$Scope
     )
 
     try {
@@ -46,7 +46,7 @@ function Deploy-Module {
             Write-Host "DEPLOY-MODULE: Checking for User Module Path"
             
             # Confirm Windows system pointer resolves.
-            if($([Environment]::GetFolderPath("MyDocuments")) -eq $null) {
+            if($null -eq $([Environment]::GetFolderPath("MyDocuments"))) {
                 Write-Host "DEPLOY-MODULE: System MyDocuments pointer is not valid. Please check your environment." -ForegroundColor Red
                 exit
             }
@@ -72,7 +72,7 @@ function Deploy-Module {
 
             # If no Scope is passed confirm that we haven't already found a user modules path
             if ([string]::IsNullOrWhiteSpace($pwshModulesFolder)) {
-                if($env:PROGRAMFILES -eq $null) {
+                if($null -eq $env:PROGRAMFILES) {
                     Write-Host "DEPLOY-MODULE: System PROGRAMFILES pointer is not valid. Please check your environment." -ForegroundColor Red
                     exit
                 }
@@ -241,8 +241,8 @@ function Assert-RuntimeRequirements {
     }
 
     # Check if script is running in the correct execution context
-    if ($PSCmdlet -and $PSCmdlet.MyInvocation.InvocationName -ne ".") {
-        Write-Host "PREFLIGHT SETUP: This script must be run in the context of a script file, not dot-sourced or as a function." -ForegroundColor Red
+    if ($PSCmdlet -and $MyInvocation.InvocationName -eq $MyInvocation.MyCommand.Name) {
+        Write-Host "PREFLIGHT SETUP: This script must not be dot-sourced. Please run it directly as a script file." -ForegroundColor Red
         Write-Host "PREFLIGHT SETUP: Exiting setup."
         exit
     }
