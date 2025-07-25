@@ -269,7 +269,7 @@ Module and append PreFlight to your Pwsh PROFILE.
 # Confirmation to proceed with setup
 $beginSetup = Read-Host "Are you ready to deploy PreFlight? (yes/no)"
 if ($beginSetup -ne "yes") {
-    Write-Host "PROFILE: Exiting setup."
+    Write-Host "PREFLIGHT SETUP: Exiting setup."
     exit
 }
 
