@@ -6,10 +6,6 @@
     https://github.com/e-hive/PreFlight
 #>
 
-# ==========================================
-# Deploy PreFlight
-# ==========================================
-
 function Deploy-Module {
     param (
         # Module name must match the psm1 & psd1 file names.
@@ -148,11 +144,6 @@ function Deploy-Module {
     }
 }
 
-
-# ==========================================
-# Update Profile
-# ==========================================
-
 function Update-Profile {
     param (
         # The content to append to the profile file
@@ -254,12 +245,11 @@ function Assert-RuntimeRequirements {
         exit
     }
 
-    Write-Host "PREFLIGHT SETUP: Environment checks passed. Proceeding with setup..." -ForegroundColor Green
+    Write-Host "PREFLIGHT SETUP: Environment checks passed. Proceeding with setup..." -ForegroundColor DarkGreen
 }
 
-# ==========================================
+
 # PreFlight Setup
-# ==========================================
 Clear-Host
 Write-Host @"
 ================================================
