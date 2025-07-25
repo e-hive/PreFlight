@@ -37,12 +37,9 @@ PreFlight helps with two common problems faced by development teams:
 - **Check Execution Policy** – Ensures policy is compatible.
 - **Check Installed Modules** – Verifies required modules are present and up to date.
 - **Check Installed Tools** – Verifies required tools are present and up to date.
-
-### ToDo's:
-- **Check Environment Variables**
-- **Check Open Ports**
-- **Check Public IP**
-- **Check Service Connectivity**
+- **Check Environment Variables** - Confirms the existence of required environment variables.
+- **Check Public IP** - Verifies that your Public IP address matches the expected value.
+- **Check Service Availability** - Verifies that critical services are reachable.
 
 ---
 

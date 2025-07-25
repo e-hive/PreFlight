@@ -6,10 +6,6 @@
     https://github.com/e-hive/PreFlight
 #>
 
-# ==========================================
-# Deploy PreFlight
-# ==========================================
-
 function Deploy-Module {
     param (
         # Module name must match the psm1 & psd1 file names.
@@ -24,7 +20,6 @@ function Deploy-Module {
     )
 
     try {
-
         $pwshModulesFolder = ""
         $registeredModulePathStrings = @()
 
@@ -38,7 +33,6 @@ function Deploy-Module {
                 $registeredModulePathStrings += $modulePath
             }
         }
-
 
         # Check for user modules folder
         #----------------------------------------
@@ -63,7 +57,6 @@ function Deploy-Module {
                 }
             }
         }
-
 
         # Check for global modules folder
         #----------------------------------------
@@ -147,11 +140,6 @@ function Deploy-Module {
         exit
     }
 }
-
-
-# ==========================================
-# Update Profile
-# ==========================================
 
 function Update-Profile {
     param (
@@ -254,12 +242,11 @@ function Assert-RuntimeRequirements {
         exit
     }
 
-    Write-Host "PREFLIGHT SETUP: Environment checks passed. Proceeding with setup..." -ForegroundColor Green
+    Write-Host "PREFLIGHT SETUP: Environment checks passed. Proceeding with setup..." -ForegroundColor DarkGreen
 }
 
-# ==========================================
+
 # PreFlight Setup
-# ==========================================
 Clear-Host
 Write-Host @"
 ================================================
@@ -279,7 +266,7 @@ Module and append PreFlight to your Pwsh PROFILE.
 # Confirmation to proceed with setup
 $beginSetup = Read-Host "Are you ready to deploy PreFlight? (yes/no)"
 if ($beginSetup -ne "yes") {
-    Write-Host "PROFILE: Exiting setup."
+    Write-Host "PREFLIGHT SETUP: Exiting setup."
     exit
 }
 
