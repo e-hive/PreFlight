@@ -155,8 +155,7 @@ function Test-PublicIP {
 function Test-ServiceAvailability {
     $startTime = Get-Date
     $ServiceUrls = @(
-        @{ Url = "http://www.google.com"; ExpectedStatusCode = 200 },
-        @{ Url = "http://cms.lvgig.co.uk"; ExpectedStatusCode = 403 }
+        @{ Url = "http://www.google.com"; ExpectedStatusCode = 200 }
     )
 
     foreach ($service in $ServiceUrls) {
