@@ -59,12 +59,13 @@ function Test-InstalledTools {
         @{ Name = "node"; Command = "node --version"; MinVersion = "16.0" },
         @{ Name = "az"; Command = "az version | ConvertFrom-Json | Select-Object -ExpandProperty azure-cli"; MinVersion = "2.0" },
         @{ Name = "kubectl"; Command = "(kubectl version --client --output json | ConvertFrom-Json).clientVersion.gitVersion.TrimStart('v')"; MinVersion = "1.20" },
-        @{ Name = "docker"; Command = "docker --version"; MinVersion = "20.10" }#,
+        @{ Name = "docker"; Command = "docker --version"; MinVersion = "20.10" },
+        @{ Name = "preflighttest"; Command = "preflighttest --version"; MinVersion = "999" }
         #@{ Name = "terraform"; Command = "terraform --version"; MinVersion = "1.0" },
         #@{ Name = "helm"; Command = "helm version --short --client | ForEach-Object { $_ -replace 'v', '' }"; MinVersion = "3.0" },
         #@{ Name = "npm"; Command = "npm --version"; MinVersion = "8.0" },
         #@{ Name = "yarn"; Command = "yarn --version"; MinVersion = "1.22" },
-        #@{ Name = "azcopy"; Command = "azcopy --version | ForEach-Object { ($_ -split ' ')[1] }"; MinVersion = "10.0" }
+        #@{ Name = "azcopy"; Command = "[regex]::Match((azcopy --version), '\d+\.\d+\.\d+').Value"; MinVersion = "10.0" }
     )
 
     foreach ($tool in $tools) {
