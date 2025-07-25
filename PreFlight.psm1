@@ -64,7 +64,7 @@ function Test-InstalledTools {
         #@{ Name = "helm"; Command = "helm version --short --client | ForEach-Object { $_ -replace 'v', '' }"; MinVersion = "3.0" },
         #@{ Name = "npm"; Command = "npm --version"; MinVersion = "8.0" },
         #@{ Name = "yarn"; Command = "yarn --version"; MinVersion = "1.22" },
-        #@{ Name = "azcopy"; Command = "azcopy --version | ForEach-Object { ($_ -split ' ')[1] }"; MinVersion = "10.0" }
+        #@{ Name = "azcopy"; Command = "[regex]::Match((azcopy --version), '\d+\.\d+\.\d+').Value"; MinVersion = "10.0" }
     )
 
     foreach ($tool in $tools) {
