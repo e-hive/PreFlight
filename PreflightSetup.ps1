@@ -241,7 +241,7 @@ function Assert-RuntimeRequirements {
     }
 
     # Check if script is running in the correct execution context
-    if ($PSCmdlet -and $MyInvocation.InvocationName -eq $MyInvocation.MyCommand.Name) {
+    if ($PSCmdlet -and $MyInvocation.InvocationName -eq '.') {
         Write-Host "PREFLIGHT SETUP: This script must not be dot-sourced. Please run it directly as a script file." -ForegroundColor Red
         Write-Host "PREFLIGHT SETUP: Exiting setup."
         exit
