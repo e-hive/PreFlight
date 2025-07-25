@@ -20,7 +20,6 @@ function Deploy-Module {
     )
 
     try {
-
         $pwshModulesFolder = ""
         $registeredModulePathStrings = @()
 
@@ -34,7 +33,6 @@ function Deploy-Module {
                 $registeredModulePathStrings += $modulePath
             }
         }
-
 
         # Check for user modules folder
         #----------------------------------------
@@ -59,7 +57,6 @@ function Deploy-Module {
                 }
             }
         }
-
 
         # Check for global modules folder
         #----------------------------------------
